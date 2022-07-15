@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barra de progreso</title>
+    <link rel="stylesheet" href="styles/barra_de_progreso.css" type="text/css">
+</head>
+<body>
+    <h1>Cargando</h1>
+    <div class="barra">
+        <span class="progreso"></span>
+    </div>
+    <script>
+        setInterval(function(){
+            let barra = document.getElementsByClassName("barra")[0];
+            let progreso = document.getElementsByClassName("progreso")[0];
+        
+            progreso.style.width = progreso.clientWidth + 1 + "px";
+        
+            if (progreso.clientWidth >= barra.clientWidth){
+                progreso.style.width = 1 + "px";
+            }
+        }, 30);
+    </script>
+</body>
+</html>
